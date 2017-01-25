@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="bg">
+	<head>
+		<meta charset="utf-8" />
+		<title>Homework 1</title>
+			<style type="text/css">
+				#header_wa{
+					height: 50px;
+					width: 260px;
+				}
+
+				#header_vbox{
+					height: 50px;
+					width: 50px;
+				}
+
+				#header_google{
+					height: 50px;
+					width: 150px;
+				}
+				nav{
+					width: 50%;
+					border-style: solid;
+					border-color: black;
+					text-align: center;
+					display: inline-block;
+
+				}
+
+				aside {
+					float:right;
+					width: 350px;
+				}
+
+				header{
+					border-color: lightblue;
+					border-width: 3px;
+					text-align: center;
+					border-style: solid;
+
+				}
+
+				footer{
+					margin-bottom: 0px;
+					border-color: lightgreen;
+					border-width: 3px;
+					border-style: solid;
+					width: 100%;
+					clear: both;
+				}
+
+				section{
+					 float: left;
+  					 width: 950px;
+  					 border-color: red;
+  					 border-style: solid;
+				}
+
+				#year{
+					float: right;
+				}
+
+				#to_do{
+					font-weight: bold;
+					font-size: 20px;
+				}
+
+			</style>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<img src="wa_logo.png" alt="webacademy logo" id="header_wa" />
+				<img src="Vbox7fff.png" alt="vbox logo" id="header_vbox" />
+				<img src="GoogleHummingbird.jpg" alt="google logo" id="header_google" />
+			</nav>
+		</header>
+		
+		<section>
+			<p id="to_do">Какво имаме да правим днес?</p>
+			<details>
+
+					<summary>Семантичен уеб и мултимедия</summary>
+						<ul>
+							<li><p>Използвайте HTML 5 елементи за да създадете документ с такава структура</p></li>
+				 			<li><p>Спазвайте правилата за писане на качествен и подреден код</p></li>
+							<li><p>Единичните тагове също се затварят &lt;img src=	&quot;	&quot; alt=	&quot;	&quot; &nbsp; / &gt;</p></li>
+							<li><p>Таговете и техните елементи се изписват в долен регистър(т.е. с малки букви)</p></li>
+							<li><p>Между отделните атрибути има 1 интервал разстояние, но между даден атрибут и неговата стойност и знака равно(&quot; = &quot; НЯМА)</ p></li>
+							<li><p>Между аритметичните оператори в JavaScript трябва да имате разстояние</p></li>
+						</ul>
+			</details>
+			<details>
+					<summary>Вмъкнете видео</summary>
+						<p>Вие избирате видеото, което да вмъкнете. Ако не намирате лесно, използвайте видеото от упражненията.</p>
+						<video id="myVideo" width="400" controls="controls" >
+				  			<source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+				  			<source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+				  			Your browser does not support HTML5 video.
+						</video>
+			</details>
+			<details>
+					<summary>Вмъкнете аудио</summary>
+						<p>Вие избирате аудиото, което да вмъкнете. Ако не намирате лесно, използвайте видеото от упражненията.</p>
+						<audio controls="controls">
+							<source src="http://wikidpad.sourceforge.net/help/html/demo/files/demo/ballon.mp3" type="audio/ogg">
+							Your browser does not support the audio element.
+						</audio>
+			</details>
+			<details>
+					<summary>Вмъкване от <mark>YouTube</mark></summary>
+					<div id="youTubeVideo">	
+						<iframe width="640" height="360" src="https://www.youtube.com/embed/x9T-9fZn_oA" frameborder="0" allowfullscreen></iframe> <br />
+						<span>Прогрес бар</span>
+				     		<button onclick="decreaseLength();">-</button>
+							<progress id="progress" value="0" max="100"></progress>
+							<button onclick="increaseLength();">+</button>
+					</div>
+			</details>
+		</section>
+		<aside>
+				<img src="http://lorempixel.com/400/580/" alt="buildings" id="aside_pic" />
+		</aside>
+		
+		<footer>
+			<a href="http://webacademy.bg">WebAcademy</a>
+			<span id="year">&copy;2017</span>
+		</footer>
+
+		<script type="text/javascript">
+        var currentLength;
+        function increaseLength(){
+            currentLength = document.getElementById("progress").value;
+            if (currentLength < 90) {
+                currentLength += 10;
+                document.getElementById("progress").value = currentLength;
+            }
+
+            else if (currentLength >= 90 && currentLength < 100) {
+                currentLength = 100;
+                document.getElementById("progress").value = currentLength;
+
+            }
+
+            else{
+                alert("You reached the maximum length of the progressbar!");
+            }
+        }
+
+        function decreaseLength(){
+            currentLength = document.getElementById("progress").value;
+            if (currentLength > 10) {
+                currentLength -= 10;
+                document.getElementById("progress").value = currentLength;
+            }
+
+            else if (currentLength > 0 && currentLength <= 10) {
+                currentLength = 0;
+                document.getElementById("progress").value = currentLength;
+            }
+
+            else{
+                alert("You reached the minimum length of the progressbar!");
+            }
+        }
+    </script>
+	</body>
+</html>
